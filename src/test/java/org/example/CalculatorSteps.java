@@ -29,7 +29,14 @@ public class CalculatorSteps {
     total = calculator.mul(num1, num2);
   }
 
-  @Then("the result should be {int}")
+
+  @When("I divide {int} and {int}")
+  public void i_divide_and(int int1, int int2) {
+    total = calculator.div(int1, int2);
+  }
+
+
+    @Then("the result should be {int}")
   public void validateResult(int result) throws Throwable{
     Assertions.assertEquals(total, result); }
 
